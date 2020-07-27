@@ -2,8 +2,30 @@
     <div class="col">
         <div class="row">
             <h1>AudiPro</h1>
-            <label>Seleccione una Canción:</label>
-            <input type="file">
+
+            <p-card header="Datos de la canción" [style]="{width: '360px'}">
+                <br>
+                <div>
+                    <span class="ui-float-label">
+                        <input id="float-input" type="text" size="30" pInputText> 
+                        <label for="float-input">Nombre de la Canción</label>
+                    </span>
+                    <br>
+                    <span class="ui-float-label">
+                        <input id="float-input" type="text" size="30" pInputText> 
+                        <label for="float-input">Autor</label>
+                    </span><br>
+                    <span class="ui-float-label">
+                        <input id="float-input" type="date" pInputText> 
+                        <label for="float-input">Fecha</label>
+                    </span>
+                    <br>
+                    <label>Seleccione una Canción:</label>
+                    <input type="file">
+                </div>
+            </p-card>
+
+
 
             <h3>Archivos Subidos</h3>
         </div>

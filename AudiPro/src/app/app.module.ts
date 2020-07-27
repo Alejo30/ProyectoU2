@@ -5,6 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 
+//Primeng
+
+import {InputTextModule} from 'primeng/inputtext';
+
+import {CardModule} from 'primeng/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +18,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InputTextModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
