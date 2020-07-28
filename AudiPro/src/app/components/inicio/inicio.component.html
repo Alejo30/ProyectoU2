@@ -7,7 +7,7 @@
                 <br>
                 <div>
                     <span class="ui-float-label">
-                        <input id="float-input" type="text" size="30" pInputText> 
+                        <input id="float-input" [(ngModel)]="nomCancion" type="text" size="30" pInputText> 
                         <label for="float-input">Nombre de la Canción</label>
                     </span>
                     <br>
@@ -21,13 +21,13 @@
                     </span>
                     <br>
                     <label>Seleccione una Canción:</label>
-                    <input type="file">
+                    <input (change)="onChange($event)" type="file">
                 </div>
+
+
+                <button (click)="guardarS3()">Guardar</button>
             </p-card>
 
-
-
-            <h3>Archivos Subidos</h3>
         </div>
     </div>
 </div>
