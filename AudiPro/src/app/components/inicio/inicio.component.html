@@ -7,17 +7,27 @@
                 <br>
                 <div>
                     <span class="ui-float-label">
-                        <input id="float-input" [(ngModel)]="nomCancion" type="text" size="30" pInputText> 
+                        <input id="float-input" [(ngModel)]="newaudio.nombre" type="text" size="30" pInputText> 
                         <label for="float-input">Nombre de la Canción</label>
                     </span>
                     <br>
                     <span class="ui-float-label">
-                        <input id="float-input" type="text" size="30" pInputText> 
+                        <input id="float-input" [(ngModel)]="newaudio.autor" type="text" size="30" pInputText> 
                         <label for="float-input">Autor</label>
                     </span><br>
                     <span class="ui-float-label">
-                        <input id="float-input" type="date" pInputText> 
-                        <label for="float-input">Fecha</label>
+                        <input id="float-input" [(ngModel)]="newaudio.anio" type="number" size="30" pInputText> 
+                        <label for="float-input">Año</label>
+                    </span>
+                    <br>
+                    <span class="ui-float-label">
+                        <input id="float-input" [(ngModel)]="newaudio.genero" type="text" size="30" pInputText> 
+                        <label for="float-input">Género</label>
+                    </span>
+                    <br>
+                    <span class="ui-float-label">
+                        <input id="float-input" [(ngModel)]="newaudio.album " type="text" size="30" pInputText> 
+                        <label for="float-input">Albúm</label>
                     </span>
                     <br>
                     <label>Seleccione una Canción:</label>

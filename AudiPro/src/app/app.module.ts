@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 
 import {FormsModule} from '@angular/forms'
+import {HttpClientModule} from '@angular/common/http'
 
-//Primeng
+// Primeng
 
 import {InputTextModule} from 'primeng/inputtext';
-
 import {CardModule} from 'primeng/card';
+// Servicios
+import { AudioproService } from './services/audiopro.service';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +26,10 @@ import {CardModule} from 'primeng/card';
     AppRoutingModule,
     InputTextModule,
     CardModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AudioproService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
