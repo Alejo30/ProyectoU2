@@ -7,7 +7,7 @@ import {Audio} from  '../Audio'
 })
 export class AudioproService {
 
-  private url = 'http://localhost:8080';
+  private url = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }
 
   getAudio(): Observable<any>{
@@ -15,6 +15,6 @@ export class AudioproService {
   }
 
   addAudio(audio: Audio): Observable<any>{
-    return this.http.post(`${this.url}/addAudios`, audio);
+    return this.http.post(`${this.url}/addAudio`, audio);
   }
 }

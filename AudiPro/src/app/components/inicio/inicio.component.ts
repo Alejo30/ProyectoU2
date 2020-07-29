@@ -37,7 +37,6 @@ export class InicioComponent implements OnInit {
   guardarS3(){
     const file = this.archivo.item(0);
     console.log(file);
-    console.log(this.nomCancion);
     this.apiS3 = new AWS.S3();
     this.paramsS3 = {
       Bucket: "audipro",
