@@ -57,7 +57,7 @@ export class InicioComponent implements OnInit {
     console.log(this.newaudio);
     this.ausrv.addAudio(this.newaudio).subscribe(
       data => {
-        console.log('OK');
+        console.log('Ok');
       }
     )
   }
