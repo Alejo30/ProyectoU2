@@ -3,6 +3,8 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
+import { AlbumControllerService } from './api/albumController.service';
+import { ArtistaControllerService } from './api/artistaController.service';
 import { AudioControllerService } from './api/audioController.service';
 
 @NgModule({
@@ -10,6 +12,8 @@ import { AudioControllerService } from './api/audioController.service';
   declarations: [],
   exports:      [],
   providers: [
+    AlbumControllerService,
+    ArtistaControllerService,
     AudioControllerService ]
 })
 export class ApiModule {

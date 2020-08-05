@@ -12,7 +12,19 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarAudiosComponent
-  }
+  },
+  {
+    path: 'albums',
+    loadChildren: () => import('./albumes/albumes.module').then(m => m.AlbumesModule)
+  },
+  {
+    path: 'artistas',
+    loadChildren: () => import('./artistas/artistas.module').then(m => m.ArtistasModule)
+  },  
+  {
+    path: 'audios',
+    loadChildren: () => import('./audios/audios.module').then(m => m.AudiosModule)
+  },
 ];
 
 @NgModule({

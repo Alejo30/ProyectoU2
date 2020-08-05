@@ -13,10 +13,37 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
-        label: 'Agregar Audios', icon: 'pi pi-fw pi-volume-up', routerLink: '/'
+        label: 'Inicio', icon: 'pi pi-fw pi-volume-up', routerLink: '/'
       },
       {
-        label: 'Listar Audios', icon: 'pi pi-fw pi-volume-up', routerLink: 'listar'
+        label: 'Canciones', icon: 'pi pi-fw pi-volume-up',
+        items: [
+          [
+              {
+                  items: [{label: 'Registrar Canción', routerLink: '/'}, {label: 'Listar Canciones', routerLink:'listar'}]
+              },
+          ]
+      ]
+      },
+      {
+        label: 'Álbums', icon: 'pi pi-fw pi-volume-up',
+        items: [
+          [
+              {
+                  items: [{label: 'Registrar Álbums', routerLink: 'albums/add'}, {label: 'Listar Álbums', routerLink:'albums/list'}]
+              },
+          ]
+      ]
+      },
+      {
+        label: 'Artistas', icon: 'pi pi-fw pi-volume-up',
+        items: [
+          [
+              {
+                  items: [{label: 'Registrar Artistas', routerLink: 'artistas/add'}, {label: 'Listar Artistas', routerLink:'artistas/list'}]
+              },
+          ]
+      ]
       }
     ];
 }

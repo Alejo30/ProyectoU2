@@ -42,7 +42,6 @@ import { AudioControllerService } from '../../rest/api/audioController.service';
 })
 export class ListarAudiosComponent implements OnInit {
   audios = new Array<Audio>();
-  au : Audio
   cols: any[];
   allaudios: any ={
     nombre: '',
@@ -62,9 +61,7 @@ export class ListarAudiosComponent implements OnInit {
 
     this.audiSrv.getAllAudiosUsingGET().subscribe(
       data =>{
-        this.audios = data
-        console.log(this.allaudios);
-           
+        this.audios = data;
       }
     );
 

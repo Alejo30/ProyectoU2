@@ -10,11 +10,7 @@
  * Do not edit the class manually.
  */
 
-export interface Audio { 
-    album?: string;
-    anio?: number;
-    autor?: string;
-    genero?: string;
+export interface Artista { 
     id?: number;
     nombre?: string;
 }

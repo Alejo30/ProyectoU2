@@ -1,1 +1,27 @@
-<p>registrar works!</p>
+<div class="container">
+    <p-card header="Datos del Artista" [style]="{width: '360px'}">
+        <br>
+        <div>
+            <span class="ui-float-label">
+                <input id="float-input" [(ngModel)]="newartista.nombre" type="text" size="30" pInputText> 
+                <label for="float-input">Nombre del Artista</label>
+            </span>
+        </div>
+        <br>
+        <div>
+            <button pButton type="button" label="Guardar" (click)="addArtista()"></button>
+        </div>
+
+        <div *ngIf="cargando === false">
+            <p-progressSpinner></p-progressSpinner>
+            <p>Subiendo</p>
+
+        </div>
+        <div *ngIf="cargando === true">
+            <ng-template #mensaje>
+                <p-messages [(value)]="msgs"></p-messages>
+            </ng-template>
+        </div>
+
+    </p-card>
+</div>

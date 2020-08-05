@@ -1,1 +1,35 @@
-<p>registrar works!</p>
+<div class="container">
+    <p-card header="Datos del Àlbum" [style]="{width: '360px'}">
+        <br>
+        <div>
+            <span class="ui-float-label">
+                <input id="float-input" [(ngModel)]="newalbum.nombre" type="text" size="30" pInputText> 
+                <label for="float-input">Nombre del Àlbum</label>
+            </span><br>
+            <span class="ui-float-label">
+                <p-dropdown [options]="artista" [(ngModel)]="newalbum.artista"  size="30"></p-dropdown> 
+                <label for="float-input">Nombre del Artista</label>
+            </span><br>
+            <span class="ui-float-label">
+                <input id="float-input" [(ngModel)]="newalbum.anio" type="number"  size="30" pInputText> 
+                <label for="float-input">Año</label>
+            </span><br>
+        </div>
+        <br>
+        <div>
+            <button pButton type="button" label="Guardar" (click)="addAlbum()"></button>
+        </div>
+
+        <div *ngIf="cargando === false">
+            <p-progressSpinner></p-progressSpinner>
+            <p>Subiendo</p>
+
+        </div>
+        <div *ngIf="cargando === true">
+            <ng-template #mensaje>
+                <p-messages [(value)]="msgs"></p-messages>
+            </ng-template>
+        </div>
+
+    </p-card>
+</div>

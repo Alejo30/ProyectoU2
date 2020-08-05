@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
-
-
+import { ListarAudiosComponent } from './components/listar-audios/listar-audios.component';
+import { RegistrarAudiosComponent } from './components/registrar-audios/registrar-audios.component';
+// Primeng
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
@@ -16,18 +15,24 @@ import {MegaMenuModule} from 'primeng/megamenu';
 import {TableModule} from 'primeng/table';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {CarouselModule} from 'primeng/carousel';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {DropdownModule} from 'primeng/dropdown';
 // Servicios
 import { AudioproService } from './services/audiopro.service';
 import { AudioControllerService } from './rest/api/audioController.service';
-import { ListarAudiosComponent } from './components/listar-audios/listar-audios.component';
-import { RegistrarAudiosComponent } from './components/registrar-audios/registrar-audios.component';
+import { HomeComponent } from './components/home/home.component';
+import { ArtistaControllerService } from './rest/api/artistaController.service';
+import { AlbumControllerService } from './rest/api/albumController.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarAudiosComponent,
-    RegistrarAudiosComponent
+    RegistrarAudiosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,12 @@ import { RegistrarAudiosComponent } from './components/registrar-audios/registra
     MegaMenuModule,
     TableModule,
     CarouselModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    MessagesModule,
+    MessageModule,
+    DropdownModule
   ],
-  providers: [AudioproService, AudioControllerService],
+  providers: [AudioproService, AudioControllerService, ArtistaControllerService, AlbumControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

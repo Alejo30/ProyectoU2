@@ -5,7 +5,6 @@
     </div>
     <div class="col" style="justify-content: center;">
         <div class="row">
-            <h1>AudiPro</h1>
 
             <p-card header="Datos de la canción" [style]="{width: '360px'}">
                 <br>
@@ -16,23 +15,29 @@
                     </span>
                     <br>
                     <span class="ui-float-label">
-                        <input id="float-input" [(ngModel)]="newaudio.autor" type="text" size="30" pInputText> 
+                        <p-dropdown [options]="artista" [(ngModel)]="newaudio.autor"  size="30"></p-dropdown>
                         <label for="float-input">Autor</label>
-                    </span><br>
+                    </span>
+
+                    <br>
                     <span class="ui-float-label">
                         <input id="float-input" [(ngModel)]="newaudio.anio" type="number" size="30" pInputText> 
                         <label for="float-input">Año</label>
                     </span>
                     <br>
                     <span class="ui-float-label">
-                        <input id="float-input" [(ngModel)]="newaudio.album" type="text" size="30" pInputText> 
+                        <p-dropdown [options]="artista" [(ngModel)]="newaudio.album"  size="30"></p-dropdown>
                         <label for="float-input">Albúm</label>
                     </span>
+
                     <br>
                     <span class="ui-float-label">
                         <input id="float-input" [(ngModel)]="newaudio.genero" type="text" size="30" pInputText> 
                         <label for="float-input">Género</label>
                     </span>
+                    <br>
+
+
                     <br>
                     <label>Seleccione una Canción:</label> <br><br>
                     <input accept=".mp3" (change)="onChange($event)" type="file">
@@ -45,10 +50,18 @@
                 </div>
 
 
-                <button (click)="guardarS3()">Guardar</button>
+
                 <div *ngIf="cargando === false">
                     <p-progressSpinner></p-progressSpinner>
+                    <p>Subiendo</p>
+
                 </div>
+                <div *ngIf="cargando === true">
+                    <ng-template #mensaje>
+                        <p-messages [(value)]="msgs"></p-messages>
+                    </ng-template>
+                </div>
+
             </p-card>
 
         </div>
