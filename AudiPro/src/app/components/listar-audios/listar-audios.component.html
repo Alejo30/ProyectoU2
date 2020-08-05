@@ -12,9 +12,35 @@
                 <td *ngFor="let col of columns">
                     {{ rowData[col.field]}}
                 </td>
-
+                <td > 
+                    <!-- <audio src="{{hola}}" controls=""></audio> -->
+                    <!-- <p>  {{a[0].nombre}}</p> -->
+                </td>
             </tr>
         </ng-template>
 
     </p-table>
+    
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Album</th>
+            </tr>
+        </thead>
+        
+       <tbody>
+           <tr *ngFor="let audio of audios">
+               <td>{{audio.nombre}}</td>
+               <td>{{audio.autor}}</td>
+               <td>{{audio.genero}}</td>
+                <td>
+                    <audio src="{{hola}}/{{audio.nombre}}.mp3" controls=""></audio>
+                </td>
+           </tr>
+       </tbody>
+    </table>
 </div>

@@ -9,6 +9,7 @@ import { AudioControllerService } from '../../rest/api/audioController.service';
 export class ListarAudiosComponent implements OnInit {
   audios = new Array<Audio>();
   cols: any[];
+  hola="https://audipro.s3.amazonaws.com";
   constructor(private audiSrv: AudioControllerService) { }
 
   ngOnInit(): void {
@@ -18,11 +19,12 @@ export class ListarAudiosComponent implements OnInit {
 
 
   listar(){
+
     this.audiSrv.getAllAudiosUsingGET().subscribe(
       data =>{
         this.audios = data;
-        console.log(this.audios)
-        console.log('OK')
+        console.log(this.audios);
+        
       }
     );
 
