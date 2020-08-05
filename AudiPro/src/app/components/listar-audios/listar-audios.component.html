@@ -25,4 +25,38 @@
         </ng-template>
 
     </p-table>
+
+
+    <p-carousel [value]="audios">
+        <ng-template let-car pTemplate="item">
+            Content to display
+        </ng-template>
+    </p-carousel>
+
+    <p-carousel [value]="audios" [numVisible]="4" [numScroll]="3" [circular]="false">
+        <p-header>
+            <h3>Basic</h3>
+        </p-header>
+        <ng-template let-allaudios pTemplate="item">
+            <div class="audio-details">
+                <div class="p-grid p-nogutter">
+                    <div class="p-col-12">
+                        <img src="assets/imgs/descarga.jpg" />
+                    </div>
+                    <div class="p-col-12 audio-data">
+                        <div class="audio-title">{{allaudios.nombre}}</div>
+                        <div class="audio-subtitle">{{allaudios.album}} | {{allaudios.autor}}</div>
+
+                        <div class="audio-buttons">
+                            <button pButton type="button" class="ui-button-secondary" icon="pi pi-search"></button>
+                            <button pButton type="button" class="ui-button-secondary" icon="pi pi-star"></button>
+                            <button pButton type="button" class="ui-button-secondary" icon="pi pi-cog"></button>
+                            <br>
+                            <audio src="https://d1jjqsu8gmvqno.cloudfront.net/{{allaudios.nombre}}.mp3" controls=""></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
 </div>

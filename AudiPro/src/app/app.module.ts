@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InicioComponent } from './components/inicio/inicio.component';
 
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
@@ -16,6 +15,8 @@ import {ButtonModule} from 'primeng/button';
 import {FileUploadModule} from 'primeng/fileupload';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {TableModule} from 'primeng/table';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {CarouselModule} from 'primeng/carousel';
 // Servicios
 import { AudioproService } from './services/audiopro.service';
 import { AudioControllerService } from './rest/api/audioController.service';
@@ -26,7 +27,6 @@ import { RegistrarAudiosComponent } from './components/registrar-audios/registra
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     ListarAudiosComponent,
     RegistrarAudiosComponent
   ],
@@ -40,7 +40,9 @@ import { RegistrarAudiosComponent } from './components/registrar-audios/registra
     HttpClientModule,
     FileUploadModule,
     MegaMenuModule,
-    TableModule
+    TableModule,
+    CarouselModule,
+    ProgressSpinnerModule
   ],
   providers: [AudioproService, AudioControllerService],
   bootstrap: [AppComponent]

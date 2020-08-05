@@ -11,6 +11,7 @@ import { AudioControllerService } from '../../rest/api/audioController.service';
 export class RegistrarAudiosComponent implements OnInit {
 
   apiS3: any;
+  cargando: boolean;
   nomCancion: any;
   paramsS3: any;
   archivo;
@@ -35,6 +36,7 @@ export class RegistrarAudiosComponent implements OnInit {
   }
 
   guardarS3(){
+    this.cargando = false
     const file = this.archivo.item(0);
     console.log(file);
     this.apiS3 = new AWS.S3();
@@ -48,6 +50,7 @@ export class RegistrarAudiosComponent implements OnInit {
       else{
         this.paramsS3 =null;
         alert("Registro guardado con exito")
+        this.cargando = true
       }
     });
     this.addAudio();
