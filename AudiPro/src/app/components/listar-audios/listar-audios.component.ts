@@ -16,15 +16,11 @@ export class ListarAudiosComponent implements OnInit {
     this.listar();
   }
 
-
-
   listar(){
 
     this.audiSrv.getAllAudiosUsingGET().subscribe(
       data =>{
-        this.audios = data;
-        console.log(this.audios);
-        
+        this.audios = data;        
       }
     );
 

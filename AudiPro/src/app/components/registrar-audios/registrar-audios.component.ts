@@ -21,7 +21,7 @@ export class RegistrarAudiosComponent implements OnInit {
     genero: '',
     album: ''
   };
-  constructor(private ausrv: AudioproService, private audiSrv: AudioControllerService) {// Inicializar el proveedor de credenciales de Amazon Cognito
+  constructor(private ausrv: AudioproService, private audiSrv: AudioControllerService) {
     AWS.config.region = 'us-east-1'; // Región
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: 'us-east-1:422a1383-0568-4072-9417-3bddb3b1852c',
@@ -54,11 +54,8 @@ export class RegistrarAudiosComponent implements OnInit {
   }
 
   addAudio(){
-    console.log(this.newaudio);
     this.audiSrv.createAudioUsingPOST(this.newaudio).subscribe(
-      data =>{
-        console.log('OK')
-      }
+      data =>{}
     )
   }
 
