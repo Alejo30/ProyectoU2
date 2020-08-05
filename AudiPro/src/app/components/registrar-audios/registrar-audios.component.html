@@ -21,21 +21,24 @@
                     </span>
                     <br>
                     <span class="ui-float-label">
+                        <input id="float-input" [(ngModel)]="newaudio.album" type="text" size="30" pInputText> 
+                        <label for="float-input">Albúm</label>
+                    </span>
+                    <br>
+                    <span class="ui-float-label">
                         <input id="float-input" [(ngModel)]="newaudio.genero" type="text" size="30" pInputText> 
                         <label for="float-input">Género</label>
                     </span>
                     <br>
-                    <span class="ui-float-label">
-                        <input id="float-input" [(ngModel)]="newaudio.album " type="text" size="30" pInputText> 
-                        <label for="float-input">Albúm</label>
-                    </span>
-                    <br>
-                    <label>Seleccione una Canción:</label>
-                    <input accept=".mp3" (change)="onChange($event)" type="file">
+                    <label>Seleccione una Canción:</label> <br><br>
+                    <input accept=".mp3" (change)="onChange($event)" type="file" >
+                <br>
+                    
                 </div>
-
-
-                <button (click)="guardarS3()">Guardar</button>
+                <br>
+                <div>
+                    <button pButton type="button" label="Guardar" (click)="guardarS3()" ></button>
+                </div>
             </p-card>
 
         </div>

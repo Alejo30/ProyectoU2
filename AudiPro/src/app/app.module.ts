@@ -8,7 +8,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
 
-// Primeng
 
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
@@ -16,7 +15,7 @@ import {ButtonModule} from 'primeng/button';
 import {FileUploadModule} from 'primeng/fileupload';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {TableModule} from 'primeng/table';
-// Servicios
+
 import { AudioproService } from './services/audiopro.service';
 import { AudioControllerService } from './rest/api/audioController.service';
 import { ListarAudiosComponent } from './components/listar-audios/listar-audios.component';

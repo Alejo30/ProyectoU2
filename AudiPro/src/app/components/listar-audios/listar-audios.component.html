@@ -2,7 +2,7 @@
     <p-table [columns]="cols" [value]="audios" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header" let-columns>
             <tr>
-                <th>MP3</th>
+                <th>Reproducir</th>
                 <th *ngFor="let col of columns">
                     {{ col.header}}
                 </th>
