@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { RegistrarAudiosComponent } from './components/registrar-audios/registrar-audios.component';
+import { ListarAudiosComponent } from './components/listar-audios/listar-audios.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: InicioComponent
+    component: RegistrarAudiosComponent
+  },
+  {
+    path: 'listar',
+    component: ListarAudiosComponent
   }
 ];
 

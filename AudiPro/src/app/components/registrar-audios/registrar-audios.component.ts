@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as AWS from 'aws-sdk';
 import { AudioproService } from '../../services/audiopro.service';
+
+import { AudioControllerService } from '../../rest/api/audioController.service';
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-registrar-audios',
+  templateUrl: './registrar-audios.component.html',
+  styleUrls: ['./registrar-audios.component.css']
 })
-export class InicioComponent implements OnInit {
+export class RegistrarAudiosComponent implements OnInit {
 
   apiS3: any;
   nomCancion: any;
@@ -19,7 +21,7 @@ export class InicioComponent implements OnInit {
     genero: '',
     album: ''
   };
-  constructor(private ausrv: AudioproService) {// Inicializar el proveedor de credenciales de Amazon Cognito
+  constructor(private ausrv: AudioproService, private audiSrv: AudioControllerService) {// Inicializar el proveedor de credenciales de Amazon Cognito
     AWS.config.region = 'us-east-1'; // Región
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: 'us-east-1:422a1383-0568-4072-9417-3bddb3b1852c',
@@ -53,13 +55,11 @@ export class InicioComponent implements OnInit {
 
   addAudio(){
     console.log(this.newaudio);
-    this.ausrv.addAudio(this.newaudio).subscribe(
-      data => {
-        console.log('Ok');
+    this.audiSrv.createAudioUsingPOST(this.newaudio).subscribe(
+      data =>{
+        console.log('OK')
       }
     )
   }
-
-
 
 }

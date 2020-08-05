@@ -12,14 +12,23 @@ import {HttpClientModule} from '@angular/common/http'
 
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+import {FileUploadModule} from 'primeng/fileupload';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {TableModule} from 'primeng/table';
 // Servicios
 import { AudioproService } from './services/audiopro.service';
+import { AudioControllerService } from './rest/api/audioController.service';
+import { ListarAudiosComponent } from './components/listar-audios/listar-audios.component';
+import { RegistrarAudiosComponent } from './components/registrar-audios/registrar-audios.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    ListarAudiosComponent,
+    RegistrarAudiosComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +36,13 @@ import { AudioproService } from './services/audiopro.service';
     InputTextModule,
     CardModule,
     FormsModule,
-    HttpClientModule
+    ButtonModule,
+    HttpClientModule,
+    FileUploadModule,
+    MegaMenuModule,
+    TableModule
   ],
-  providers: [AudioproService],
+  providers: [AudioproService, AudioControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
