@@ -29,7 +29,6 @@ export class ListarAudiosComponent implements OnInit {
     );
 
     this.cols = [
-      {field: 'id', header: 'Audio ID'},
       {field: 'nombre', header: 'Nombre'},
       {field: 'autor', header: 'Autor'},
       {field: 'anio', header: 'Año'}
