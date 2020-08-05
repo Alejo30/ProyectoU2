@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
 
-// Primeng
 
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
