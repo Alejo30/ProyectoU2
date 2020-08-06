@@ -8,13 +8,8 @@
             </span>
         </div>
         <br>
-        <br>
-        <label>Seleccione una Imagen del Artista:</label> <br><br>
-        <input accept="image" (change)="onChange($event)" type="file">
-        <br>
-        <br>
         <div>
-            <button pButton type="button" label="Guardar" (click)="guardarS3()"></button>
+            <button pButton type="button" label="Guardar" (click)="addArtista()"></button>
         </div>
 
         <div *ngIf="cargando === false">
