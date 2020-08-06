@@ -10,7 +10,7 @@ import { AlbumControllerService } from 'src/app/rest/api/albumController.service
 export class ListarComponent implements OnInit {
   albums = new Array<Album>();
   cols: any[];
-  hola="https://audipro.s3.amazonaws.com";
+  hola="https://d1jjqsu8gmvqno.cloudfront.net";
   constructor(private albSrv: AlbumControllerService) { }
 
   ngOnInit(): void {
