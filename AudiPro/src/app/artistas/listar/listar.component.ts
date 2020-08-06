@@ -10,7 +10,7 @@ import { Artista } from 'src/app/rest/model/artista';
 export class ListarComponent implements OnInit {
   artistas = new Array<Artista>();
   cols: any[]; 
-  hola="https://audipro.s3.amazonaws.com";
+  hola="https://d1jjqsu8gmvqno.cloudfront.net";
   constructor(private artSvr: ArtistaControllerService) { }
 
   ngOnInit(): void {

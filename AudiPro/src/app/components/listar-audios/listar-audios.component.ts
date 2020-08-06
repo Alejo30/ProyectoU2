@@ -50,7 +50,7 @@ export class ListarAudiosComponent implements OnInit {
     genero: '',
     album: ''
   };
-  hola="https://audipro.s3.amazonaws.com";
+  hola="https://d1jjqsu8gmvqno.cloudfront.net";
   constructor(private audiSrv: AudioControllerService) { }
 
   ngOnInit(): void {
