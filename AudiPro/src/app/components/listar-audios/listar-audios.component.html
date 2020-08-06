@@ -1,32 +1,4 @@
 <div class="container">
-    <p-table [columns]="cols" [value]="audios" [paginator]="true" [rows]="5">
-        <ng-template pTemplate="header" let-columns>
-            <tr>
-                <th>Reproducir</th>
-                <th *ngFor="let col of columns">
-                    {{ col.header}}
-                </th>
-                <th>Descargar</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
-            <tr>
-                <td style="justify-content: center;">
-                    <audio src="https://d1jjqsu8gmvqno.cloudfront.net/canciones/{{rowData.nombre}}.mp3" controls=""></audio>
-                </td>
-                <td style="text-aling: center;" *ngFor="let col of columns">
-                    {{ rowData[col.field]}}
-                </td>
-
-                <td class="justify-content-center">
-                    <a class="justify-content-center" href="https://d1jjqsu8gmvqno.cloudfront.net/canciones/{{rowData.nombre}}.mp3">Descargar</a>
-                </td>
-            </tr>
-        </ng-template>
-
-    </p-table>
-
-
     <p-carousel [value]="audios" [numVisible]="4" [numScroll]="3" [circular]="false">
         <p-header>
             <h3>Canciones</h3>
