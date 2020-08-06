@@ -1,21 +1,20 @@
 <div class="container">
     <p-carousel [value]="audios" [numVisible]="4" [numScroll]="3" [circular]="false">
         <p-header>
-            <h3>Lista de Canciones</h3>
+            <h3>Canciones</h3>
         </p-header>
         <ng-template let-allaudios pTemplate="item">
             <div class="audio-details">
                 <div class="p-grid p-nogutter">
                     <div class="p-col-12">
-                        <img src="{{hola}}/albums/allaudios.nombre.jpg" />
+                        <img src="assets/imgs/descarga.jpg" />
                     </div>
                     <div class="p-col-12 audio-data">
-                        <div class="audio-subtitle">{{allaudios.nombre}}</div>
+                        <div class="audio-title">{{allaudios.nombre}}</div>
                         <div class="audio-subtitle">{{allaudios.album}} | {{allaudios.autor}}</div>
-                        <div class="audio-buttons">
-                            <br>
-                            <audio src="https://d1jjqsu8gmvqno.cloudfront.net/{{allaudios.nombre}}.mp3" controls=""></audio>
-                        </div>
+                            
+                                <audio width="50" height="32" src="https://d1jjqsu8gmvqno.cloudfront.net/{{allaudios.nombre}}.mp3" controls=""></audio>
+
                     </div>
                 </div>
             </div>

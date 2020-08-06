@@ -6,11 +6,9 @@
                 <input id="float-input" [(ngModel)]="newalbum.nombre" type="text" size="30" pInputText> 
                 <label for="float-input">Nombre del Àlbum</label>
             </span><br>
-            <label>Nombre del Artista</label>
             <span class="ui-float-label">
-                         <select [(ngModel)]="newalbum.artista" class="form-control" id="artista">
-                            <option *ngFor="let artista of artistas">{{artista.nombre}}</option>
-                        </select>
+                <p-dropdown [options]="artista" [(ngModel)]="newalbum.artista"  size="30"></p-dropdown> 
+                <label for="float-input">Nombre del Artista</label>
             </span><br>
             <span class="ui-float-label">
                 <input id="float-input" [(ngModel)]="newalbum.anio" type="number"  size="30" pInputText> 
@@ -18,14 +16,9 @@
             </span><br>
         </div>
         <br>
-        <label>Seleccione la Imagen del Album:</label> <br><br>
-        <input accept="image" (change)="onChange($event)" type="file">
-        <br>
-        <br>
         <div>
-            <button pButton type="button" label="Guardar" (click)="guardarS3()"></button>
+            <button pButton type="button" label="Guardar" (click)="addAlbum()"></button>
         </div>
-
 
         <div *ngIf="cargando === false">
             <p-progressSpinner></p-progressSpinner>
