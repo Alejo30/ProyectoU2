@@ -1,4 +1,5 @@
 <div class="container">
+    <h1>Lista de Artistas</h1>
     <p-table [columns]="cols" [value]="artistas" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header" let-columns>
             <tr>
@@ -14,6 +15,9 @@
             <tr>
                 <td style="text-aling: center;" *ngFor="let col of columns">
                     {{ rowData[col.field]}}
+                </td>
+                <td>
+                    <img src="{{hola}}/artistas/{{rowData.nombre}}.jpg" />
                 </td>
             </tr>
         </ng-template>
