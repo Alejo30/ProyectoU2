@@ -14,25 +14,23 @@
                         <label for="float-input">Nombre de la Canción</label>
                     </span>
                     <br>
+                    <label>Autor</label>
                     <span class="ui-float-label">
-                        <p-dropdown [options]="artistas" [(ngModel)]="newaudio.autor"  size="30"></p-dropdown>
-                        <label for="float-input">Autor</label>
-                    </span>
-                    <span>
-                        <select class="form-control" id="artista">
+                         <select [(ngModel)]="newaudio.autor" class="form-control" id="artista">
                             <option *ngFor="let artista of artistas">{{artista.nombre}}</option>
                         </select>
                     </span>
-
                     <br>
                     <span class="ui-float-label">
                         <input id="float-input" [(ngModel)]="newaudio.anio" type="number" size="30" pInputText> 
                         <label for="float-input">Año</label>
                     </span>
                     <br>
+                    <label>Album</label>
                     <span class="ui-float-label">
-                        <p-dropdown [options]="artista" [(ngModel)]="newaudio.album"  size="30"></p-dropdown>
-                        <label for="float-input">Albúm</label>
+                         <select [(ngModel)]="newaudio.album" class="form-control" id="album">
+                            <option *ngFor="let album of albums">{{album.nombre}}</option>
+                        </select>
                     </span>
 
                     <br>
