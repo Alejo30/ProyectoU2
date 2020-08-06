@@ -58,11 +58,6 @@
                     <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
                 </div>
 
-                <div *ngIf="cargando === false">
-                    <p-progressSpinner></p-progressSpinner>
-                    <p>Subiendo</p>
-
-                </div>
                 <div *ngIf="cargando === true">
                     <ng-template #mensaje>
                         <p-messages [(value)]="msgs"></p-messages>
