@@ -13,7 +13,7 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
-        label: 'Inicio', icon: 'pi pi-fw pi-volume-up', routerLink: '/'
+        label: 'Inicio', icon: 'pi pi-fw pi-home', routerLink: '/'
       },
       {
         label: 'Canciones', icon: 'pi pi-fw pi-volume-up',

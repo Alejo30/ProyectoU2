@@ -7,6 +7,10 @@
         <div class="row">
 
             <p-card header="Datos de la canción" [style]="{width: '360px'}">
+                <div *ngIf="cargando === false">
+                    <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+                </div>
+
                 <br>
                 <div>
                     <span class="ui-float-label">

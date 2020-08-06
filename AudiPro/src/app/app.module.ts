@@ -19,6 +19,8 @@ import {CarouselModule} from 'primeng/carousel';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {DropdownModule} from 'primeng/dropdown';
+
+import {ProgressBarModule} from 'primeng/progressbar';
 // Servicios
 import { AudioproService } from './services/audiopro.service';
 import { AudioControllerService } from './rest/api/audioController.service';
@@ -50,7 +52,8 @@ import { AlbumControllerService } from './rest/api/albumController.service';
     ProgressSpinnerModule,
     MessagesModule,
     MessageModule,
-    DropdownModule
+    DropdownModule,
+    ProgressBarModule
   ],
   providers: [AudioproService, AudioControllerService, ArtistaControllerService, AlbumControllerService],
   bootstrap: [AppComponent]
