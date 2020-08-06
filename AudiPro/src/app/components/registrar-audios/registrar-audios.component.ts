@@ -76,11 +76,13 @@ export class RegistrarAudiosComponent implements OnInit {
     this.artSvr.getAllArtistasUsingGET().subscribe(
       data => {
         this.artistas = data;
-        this.artista = this.artistas;
         console.log(this.artistas);
       }
     )
   }
+  
+
+
 
   show() {
     this.msgs.push({severity:'info', summary:'Info Message', detail:'PrimeNG rocks'});

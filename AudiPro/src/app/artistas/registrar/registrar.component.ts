@@ -23,7 +23,6 @@ export class RegistrarComponent implements OnInit {
   addArtista(){
     this.artSrv.createArtistaUsingPOST(this.newartista).subscribe(
       data => {
-        console.log('OK');
       }
     )
   }
