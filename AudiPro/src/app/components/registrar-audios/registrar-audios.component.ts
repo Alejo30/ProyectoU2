@@ -3,7 +3,7 @@ import * as AWS from 'aws-sdk';
 import { AudioproService } from '../../services/audiopro.service';
 import {Message} from 'primeng/api';
 import {SelectItem} from 'primeng/api';
-
+import { ArtistaControllerService } from '../../rest/api/artistaController.service';
 import { AudioControllerService } from '../../rest/api/audioController.service';
 import { Artista } from '../../rest/model/artista';
 @Component({
@@ -12,10 +12,10 @@ import { Artista } from '../../rest/model/artista';
   styleUrls: ['./registrar-audios.component.css']
 })
 export class RegistrarAudiosComponent implements OnInit {
-
-  artista: SelectItem[];
+  artistas = new Array<Artista>();
+  artista: Artista[];
   album: SelectItem[];
-  selectedArtista: Artista;
+  selectedArtista: string;
   apiS3: any;
   msgs: Message[] = [];
   cargando: boolean;
@@ -29,13 +29,14 @@ export class RegistrarAudiosComponent implements OnInit {
     genero: '',
     album: ''
   };
-  constructor(private ausrv: AudioproService, private audiSrv: AudioControllerService) {
+  constructor(private audiSrv: AudioControllerService, private artSvr: ArtistaControllerService) {
     AWS.config.region = 'us-east-1'; // Región
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: 'us-east-1:422a1383-0568-4072-9417-3bddb3b1852c',
     }); }
 
   ngOnInit(): void {
+    this.listar()
   }
 
   onChange(event){
@@ -68,6 +69,16 @@ export class RegistrarAudiosComponent implements OnInit {
   addAudio(){
     this.audiSrv.createAudioUsingPOST(this.newaudio).subscribe(
       data =>{}
+    )
+  }
+
+   listar(){
+    this.artSvr.getAllArtistasUsingGET().subscribe(
+      data => {
+        this.artistas = data;
+        this.artista = this.artistas;
+        console.log(this.artistas);
+      }
     )
   }
 

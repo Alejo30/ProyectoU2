@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,6 @@ import { ArtistaControllerService } from './rest/api/artistaController.service';
 import { AlbumControllerService } from './rest/api/albumController.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +36,7 @@ import { AlbumControllerService } from './rest/api/albumController.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     InputTextModule,
     CardModule,
