@@ -12,14 +12,14 @@
         <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
                 <td style="justify-content: center;">
-                    <audio src="https://d1jjqsu8gmvqno.cloudfront.net/{{rowData.nombre}}.mp3" controls=""></audio>
+                    <audio src="https://d1jjqsu8gmvqno.cloudfront.net/canciones/{{rowData.nombre}}.mp3" controls=""></audio>
                 </td>
                 <td style="text-aling: center;" *ngFor="let col of columns">
                     {{ rowData[col.field]}}
                 </td>
 
                 <td class="justify-content-center">
-                    <a class="justify-content-center" href="https://d1jjqsu8gmvqno.cloudfront.net/{{rowData.nombre}}.mp3">Descargar</a>
+                    <a class="justify-content-center" href="https://d1jjqsu8gmvqno.cloudfront.net/canciones/{{rowData.nombre}}.mp3">Descargar</a>
                 </td>
             </tr>
         </ng-template>
