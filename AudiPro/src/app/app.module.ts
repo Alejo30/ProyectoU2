@@ -22,9 +22,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ToastModule} from 'primeng/toast';
 import {ProgressBarModule} from 'primeng/progressbar';
 // Servicios
-import { AudioproService } from './services/audiopro.service';
 import { AudioControllerService } from './rest/api/audioController.service';
-import { HomeComponent } from './components/home/home.component';
 import { ArtistaControllerService } from './rest/api/artistaController.service';
 import { AlbumControllerService } from './rest/api/albumController.service';
 
@@ -34,7 +32,6 @@ import { AlbumControllerService } from './rest/api/albumController.service';
     AppComponent,
     ListarAudiosComponent,
     RegistrarAudiosComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +53,7 @@ import { AlbumControllerService } from './rest/api/albumController.service';
     ProgressBarModule,
     ToastModule
   ],
-  providers: [AudioproService, AudioControllerService, ArtistaControllerService, AlbumControllerService],
+  providers: [AudioControllerService, ArtistaControllerService, AlbumControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

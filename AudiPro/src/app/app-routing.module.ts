@@ -20,11 +20,7 @@ const routes: Routes = [
   {
     path: 'artistas',
     loadChildren: () => import('./artistas/artistas.module').then(m => m.ArtistasModule)
-  },  
-  {
-    path: 'audios',
-    loadChildren: () => import('./audios/audios.module').then(m => m.AudiosModule)
-  },
+  }
 ];
 
 @NgModule({

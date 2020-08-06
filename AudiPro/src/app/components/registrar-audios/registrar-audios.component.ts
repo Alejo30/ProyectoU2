@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as AWS from 'aws-sdk';
-import { AudioproService } from '../../services/audiopro.service';
 import { Message } from 'primeng/api';
 import { SelectItem } from 'primeng/api';
 import { ArtistaControllerService } from '../../rest/api/artistaController.service';
