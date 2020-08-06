@@ -27,10 +27,6 @@ export class AlbumControllerService {
         }
     }
 
-    /**
-     * @param consumes string[] mime-types
-     * @return true: consumes contains 'multipart/form-data', false: otherwise
-     */
     private canConsumeForm(consumes: string[]): boolean {
         const form = 'multipart/form-data';
         for (const consume of consumes) {
@@ -60,7 +56,6 @@ export class AlbumControllerService {
             headers = headers.set('Accept', httpHeaderAcceptSelected);
         }
 
-        // to determine the Content-Type header
         const consumes: string[] = [
             'application/json'
         ];
@@ -87,7 +82,6 @@ export class AlbumControllerService {
 
         let headers = this.defaultHeaders;
 
-        // to determine the Accept header
         let httpHeaderAccepts: string[] = [
             '*/*'
         ];
@@ -96,7 +90,6 @@ export class AlbumControllerService {
             headers = headers.set('Accept', httpHeaderAcceptSelected);
         }
 
-        // to determine the Content-Type header
         const consumes: string[] = [
         ];
 
