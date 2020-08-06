@@ -26,7 +26,7 @@ export class AppComponent {
       ]
       },
       {
-        label: 'Álbums', icon: 'pi pi-fw pi-volume-up',
+        label: 'Álbums', icon: 'pi pi-fw pi-id-card',
         items: [
           [
               {
@@ -36,7 +36,7 @@ export class AppComponent {
       ]
       },
       {
-        label: 'Artistas', icon: 'pi pi-fw pi-volume-up',
+        label: 'Artistas', icon: 'pi pi-fw pi-users',
         items: [
           [
               {

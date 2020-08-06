@@ -1,9 +1,13 @@
 <div class="container">
+    <h1>Lista de Álbums</h1>
     <p-table [columns]="cols" [value]="albums" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns">
                     {{ col.header}}
+                </th>
+                <th>
+                    Foto
                 </th>
             </tr>
         </ng-template>
@@ -11,6 +15,9 @@
             <tr>
                 <td style="text-aling: center;" *ngFor="let col of columns">
                     {{ rowData[col.field]}}
+                </td>
+                <td>
+                    <img src="{{hola}}/albums/{{rowData.nombre}}.jpg" />
                 </td>
             </tr>
         </ng-template>
