@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Message, SelectItem} from 'primeng/api';
 import * as AWS from 'aws-sdk';
 import { AlbumControllerService } from '../../rest/api/albumController.service';
 import { Artista } from 'src/app/rest/model/artista';
@@ -21,7 +20,7 @@ export class RegistrarComponent implements OnInit {
     anio: 0
   };
 
-  msgs: Message[] = [];
+ 
   cargando: boolean;
 
 
@@ -37,7 +36,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   guardarS3() {
-    this.cargando = false
+    this.cargando = false;
     const file = this.archivo.item(0);
     console.log(file);
     this.apiS3 = new AWS.S3();
@@ -50,9 +49,8 @@ export class RegistrarComponent implements OnInit {
         if (err) console.log(err, err.stack);
         else {
             this.paramsS3 = null;
-            alert("Registro guardado con exito")
-            this.show();
-            this.cargando = true
+            alert('Registro guardado con exito');
+            this.cargando = true;
 
         }
     });
@@ -63,7 +61,6 @@ export class RegistrarComponent implements OnInit {
   addAlbum(){
     this.albSrv.createAlbumUsingPOST(this.newalbum).subscribe(
       data => {
-        console.log('OK');
       }
     )
   }
@@ -81,13 +78,5 @@ onChange(event) {
   this.archivo = event.target.files;
 }
 
-
-  show() {
-    this.msgs.push({severity:'info', summary:'Info Message', detail:'PrimeNG rocks'});
-}
-
-hide() {
-    this.msgs = [];
-}
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Message} from 'primeng/api';
 import { ArtistaControllerService } from '../../rest/api/artistaController.service';
 import * as AWS from 'aws-sdk';
 @Component({
@@ -15,7 +14,6 @@ export class RegistrarComponent implements OnInit {
     nombre: ''
   };
 
-  msgs: Message[] = [];
   cargando: boolean;
 
   constructor(private artSrv: ArtistaControllerService) {
@@ -47,7 +45,6 @@ export class RegistrarComponent implements OnInit {
         else {
             this.paramsS3 = null;
             alert("Registro guardado con exito")
-            this.show();
             this.cargando = true
         }
     });
@@ -62,12 +59,5 @@ export class RegistrarComponent implements OnInit {
     )
   }
 
-  show() {
-    this.msgs.push({severity:'info', summary:'Info Message', detail:'PrimeNG rocks'});
-}
-
-hide() {
-    this.msgs = [];
-}
 
 }

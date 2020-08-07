@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class AudioControllerService {
 
-    protected basePath = '//54.90.216.204';
+    protected basePath = 'http://ec2-54-90-216-204.compute-1.amazonaws.com';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 

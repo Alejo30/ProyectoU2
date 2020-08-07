@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as AWS from 'aws-sdk';
-import { Message } from 'primeng/api';
-import { SelectItem } from 'primeng/api';
 import { ArtistaControllerService } from '../../rest/api/artistaController.service';
 import { AudioControllerService } from '../../rest/api/audioController.service';
 import { AlbumControllerService } from '../../rest/api/albumController.service';
@@ -18,7 +16,6 @@ export class RegistrarAudiosComponent implements OnInit {
     albums = new Array <Album> ();
     album: Album[];
     apiS3: any;
-    msgs: Message[] = [];
     cargando: boolean;
     nomCancion: any;
     paramsS3: any;
@@ -61,7 +58,6 @@ export class RegistrarAudiosComponent implements OnInit {
             else {
                 this.paramsS3 = null;
                 alert("Registro guardado con exito")
-                this.show();
                 this.cargando = true
             }
         });
@@ -92,15 +88,5 @@ export class RegistrarAudiosComponent implements OnInit {
         )
     }
 
-
-
-
-    show() {
-        this.msgs.push({ severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks' });
-    }
-
-    hide() {
-        this.msgs = [];
-    }
 
 }

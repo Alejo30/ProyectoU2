@@ -10,7 +10,7 @@ import { AlbumControllerService } from 'src/app/rest/api/albumController.service
 export class ListarComponent implements OnInit {
   albums = new Array<Album>();
   cols: any[];
-  hola="https://d1jjqsu8gmvqno.cloudfront.net";
+  path="https://d26zvb8lwqy3ku.cloudfront.net";
   constructor(private albSrv: AlbumControllerService) { }
 
   ngOnInit(): void {
@@ -22,9 +22,8 @@ export class ListarComponent implements OnInit {
     this.albSrv.getAllAlbumUsingGET().subscribe(
       data =>{
         this.albums =data;
-        console.log('OK');
       }
-    )
+    );
 
     this.cols = [
       {field: 'nombre', header: 'Nombre'},
